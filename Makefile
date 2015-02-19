@@ -1,7 +1,7 @@
 ################################
 ### FreeSwitch headers files ###
-FS_INCLUDES=/opt/freeswitch/include
-FS_MODULES=/opt/freeswitch/mod
+FS_INCLUDES=/root/freeswitch/src/include
+FS_MODULES=/root/freeswitch/src/mod
 ################################
 
 ### END OF CUSTOMIZATION ###
@@ -15,7 +15,7 @@ else
 	CFLAGS+=-m32 -march=i686
 endif
 
-INCLUDES=-I/usr/include -Ibcg729/include -I$(FS_INCLUDES)
+INCLUDES=-I/usr/include -Ibcg729/include -I$(FS_INCLUDES) -I/root/freeswitch/libs/libteletone/src
 LDFLAGS=-lm -Wl,-static -Lbcg729/src/.libs -lbcg729 -Wl,-Bdynamic 
 
 all : mod_bcg729.o
